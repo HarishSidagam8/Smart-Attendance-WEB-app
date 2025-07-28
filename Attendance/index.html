@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icons/icon-192.png" />
+    <meta name="theme-color" content="#4CAF50" />
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="style.css">  
+    <title>Smart Attendance System</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Smart Attendance System</h1>
+            <p>Subject-wise attendance tracking with enhanced features</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Setup Section -->
+            <div class="setup-section" id="setupSection">
+                <h2>📚 Class Setup</h2>
+                <div class="form-group">
+                    <label for="studentCount">Number of Students:</label>
+                    <input type="number" id="studentCount" min="1" max="200" placeholder="Enter number of students">
+                </div>
+                <button class="btn btn-primary" onclick="initializeClass()">Initialize Class</button>
+                <button class="btn btn-info" onclick="showHistory()">View History</button>
+            </div>
+
+            <!-- Subjects Setup Section -->
+            <div class="subjects-setup" id="subjectsSetup">
+                <h2>📖 Add Subjects</h2>
+                <div class="subject-entry">
+                    <input type="text" id="subjectName" placeholder="Subject name (e.g., Mathematics)">
+                    <input type="number" id="subjectHours" min="1" max="8" placeholder="Hours">
+                    <button class="btn btn-success btn-small" onclick="addSubject()">Add Subject</button>
+                </div>
+                
+                <div class="added-subjects" id="addedSubjects">
+                    <p><strong>Added Subjects:</strong></p>
+                    <div id="subjectsList"></div>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <button class="btn btn-primary" onclick="startAttendance()">Start Taking Attendance</button>
+                </div>
+            </div>
+
+            <!-- Attendance Section -->
+            <div class="attendance-section" id="attendanceSection">
+                <h2>✅ Subject-wise Attendance</h2>
+                <div id="subjectAttendanceList"></div>
+                
+                <!-- Export Section -->
+                <div class="export-section" id="exportSection">
+                    <h2>📤 Export Attendance</h2>
+                    <button class="btn btn-info" onclick="exportImage()">Export as Image</button>
+                    <button class="btn btn-success" onclick="saveSession()">Save Session</button>
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div class="history-section" id="historySection" style="display: none;">
+                <h2>📋 Attendance History</h2>
+                <div id="historyList">
+                    <p>No previous sessions found.</p>
+                </div>
+                <button class="btn btn-primary" onclick="hideHistory()">Back to Current Session</button>
+            </div>
+        </div>
+    </div> 
+  <script src="script.js"></script>
+</body>
+</html>
