@@ -75,7 +75,7 @@ Image export using HTML2Canvas
 📦 Deployment (Netlify)
 Drag & drop your folder to Netlify Drop
 
-Copy your site link (e.g., https://smart-attendance.netlify.app)
+https://smart-attendance.netlify.app
 
 Done!
 
